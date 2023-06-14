@@ -1,0 +1,17 @@
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a [routerLink]="['/contact',1,'user1']" [queryParams]="{page:1,search:'user_1'}" class="nav-link">Get user 1 deatils</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/contact',2,'user2']" [queryParams]="{page:5,search:'user_2'}" class="nav-link">Get user 2 deatils</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/contact',3,'user3']" [queryParams]="{page:4,search:'user_3'}" class="nav-link">Get user 3 deatils</a>
+    </li>
+</ul>
+<div>
+    <button type="button" (click)="onUserAdded()">User Added</button>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

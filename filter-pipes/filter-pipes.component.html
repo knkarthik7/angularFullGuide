@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 my-2">
+            <button type="button" class="btn btn-info" (click)="onAddUser()">Add User</button>
+        </div>
+        <div>{{appstatus | async }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" class="form-control" [(ngModel)]="filteredString">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="my-3" *ngFor="let user of users | filter:filteredString">
+                <!-- <p>User Name:{{user.name | uppercase | shorten : 2}}</p> -->
+                <p>User Name:{{user.name | uppercase}}</p>
+                <p>Joined Date:{{user.joinedDate | date}} </p>
+            </div>
+        </div>
+    </div>
+</div>

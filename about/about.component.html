@@ -1,0 +1,23 @@
+<!-- <p>about works!</p>
+<button (click)="onCategory()">Go To Category</button> -->
+<div class="container">
+    <p>user id: {{user.id}}</p>
+    <p>user name: {{user.name}}</p>
+</div>
+<!-- we are getting this id and name from router url -->
+<div>
+    <button class="btn btn-primary" (click)="onEdit()">Edit User</button>
+</div>
+<div>
+    <a [routerLink]="['/about',3,'karthik']"
+        [queryParams]="{page:2,search:'karthi'}"
+        [fragment]="'loading'" >Get details of Karthik</a>
+</div>
+<!-- to get dynamic data from route in the same component -->
+<!-- queryparams directive is used to pass the queryparams to the url  -->
+<!-- fragment is used to pass the fragment to the url  -->
+<!-- above methods is used to pass queryparams from the html file  -->
+<div>
+    <button class="btn btn-primary" (click)="getDetails()">Get user</button>
+</div>
+<!-- above method is used to pass queryparams from typescript file  -->

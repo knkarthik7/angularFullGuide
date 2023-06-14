@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="postForm" (ngSubmit)="onCreatePost()">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" formControlName="title">
+                    <div class="help-block" *ngIf="postForm.get('title').invalid && postForm.get('title').touched">Title
+                        is required</div>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea rows="3" class="form-control" formControlName="content"></textarea>
+                    <div class="help-block" *ngIf="postForm.get('content').invalid && postForm.get('content').touched">
+                        Content is required</div>
+                </div>
+                <div class="my-2">
+                    <button type="submit" class="btn btn-primary">Add post</button>
+                    <button type="button" class="btn btn-danger ml-2" (click)="onClearPost($event)">Clear post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" *ngIf="!error">
+                <thead>
+                    <th>Title</th>
+                    <th>Content</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of posts">
+                        <td>{{post.title}}</td>
+                        <td>{{post.content}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert-danger" *ngIf="error">
+                {{error}}
+            </div>
+        </div>
+
+    </div>
+</div>

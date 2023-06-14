@@ -1,0 +1,11 @@
+<div class="form-group">
+    <h3>Add User</h3>
+    <label>User Name: </label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="userName"> -->
+    <!-- to get value from html to ts using local reference instead of ngModel -->
+    <input type="text" class="form-control" #userName>
+    <div class="mt-2">
+        <button class="btn btn-primary" (click)="onUserAdd()">Add User</button>
+    </div>
+</div>
+<!-- without using ngModel to get html element in ts file, we also use local reference value denotes by "#anyname"  -->

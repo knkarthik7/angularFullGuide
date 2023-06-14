@@ -1,0 +1,14 @@
+<ul class="nav flex-column nav-pills">
+    <li class="nav-item" *ngIf="!isAuthenticated"><a class="nav-link" routerLink="/auth" routerLinkActive="active">Authenticate</a></li>
+    <li class="nav-item" *ngIf="isAuthenticated"><a class="nav-link" href="#" (click)="onLogout($event)" routerLinkActive="active">Logout</a></li>
+</ul>
+<ul class="nav flex-column nav-pills" *ngIf="isAuthenticated">
+    <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+   <!-- without using routerLinkActiveOptions always home menu is active, to avoid this we have to use routerLinkActiveOptions because of in url localhost:4200 is present in all routing url -->
+    <li class="nav-item"><a class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="category" routerLinkActive="active">Category</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/template-form" routerLinkActive="active">Template Form</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/reactive-form" routerLinkActive="active">Reactive Form</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/filter-pipes" routerLinkActive="active">Filter Pipes</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/post" routerLinkActive="active">Post</a></li>
+  </ul>
