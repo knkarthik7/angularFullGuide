@@ -1,0 +1,52 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Hi {{title}}</h3>
+      <hr>
+      <app-users></app-users>
+    </div>
+  </div>
+</div> -->
+
+<!-- routing concepts -->
+<div class="container">
+  <h5>Routing concepts</h5>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success mr-2 mb-3" (click)="onLogin()">Login</button>
+      <button class="btn btn-warning mb-3" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-3">
+      <app-navigation></app-navigation>
+      <!-- <ul class="nav flex-column nav-pills">
+        <li class="nav-item"><a class="nav-link" routerLink="/auth" routerLinkActive="active">Authenticate</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+       <!-- without using routerLinkActiveOptions always home menu is active, to avoid this we have to use routerLinkActiveOptions because of in url localhost:4200 is present in all routing url -->
+        <!--<li class="nav-item"><a class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="category" routerLinkActive="active">Category</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/template-form" routerLinkActive="active">Template Form</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/reactive-form" routerLinkActive="active">Reactive Form</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/filter-pipes" routerLinkActive="active">Filter Pipes</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/post" routerLinkActive="active">Post</a></li>
+      </ul> -->
+    </div>
+    <div class="col-md-9">
+      <div *ngIf="userAdded">
+        User added button
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      
+      <app-users></app-users>
+    </div>
+  </div>
+</div>
+<!-- to create new project in existing project or same project, use cli as ng generate application (projectName) -->
